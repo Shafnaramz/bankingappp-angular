@@ -1,0 +1,73 @@
+<h1>WELCOME {{dataService.currentUser.name}}</h1>
+<a routerLink="/transaction-history/">view transactions</a>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            CashDeposit
+            <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+            <table>
+                
+                <tr>
+                    <td>acno</td>
+                    <td> <input formControlName="acno" name="acnotst" type="text" class="form-control" id="acno"
+                            aria-describedby="Accountnumber"></td>
+                    
+                    <div *ngIf="getError('acno')" class="error">Acno is invalid</div>
+                </tr>
+
+                <tr>
+                    <td>pin</td>
+                    <td><input formControlName="pin" name="pin" type="text" class="form-control" id="pin"></td>
+                    
+                    <div *ngIf="getError('pin')" class="error">pin is invalid</div>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td> <input formControlName="amt" name="amt" type="text" class="form-control" id="amt"></td>
+                   
+                    <div *ngIf="getError('amt')" class="error">Acno is invalid</div>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" >deposit</button>
+                    </td>
+                </tr>
+            
+            </table>
+        </form>
+        </div>
+        <div class="col">
+            Withdraw
+            <form  [formGroup]=" withdrawForm" (ngSubmit)="withdraw()">
+            <table>
+               
+                <tr>
+                    <td>acno</td>
+                    <td><input formControlName="acno" name="acnotst" type="text" class="form-control" id="acno"aria-describedby="Accountnumber"></td>
+                    
+            <div *ngIf="getError('acno')" class="error">Acno is invalid</div>
+                </tr>
+
+                <tr>
+                    <td>pin</td>
+                    <td><input formControlName="pin" name="pin" type="text" class="form-control" id="pin"></td>
+                    
+            <div *ngIf="getError('pin')" class="error">pin is invalid</div>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td> <input formControlName="amt" name="amt" type="text" class="form-control" id="amt"></td>
+                   
+            <div *ngIf="getError('amt')" class="error">Acno is invalid</div>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" >withdraw</button>
+                    </td>
+                </tr>
+            
+            </table>
+        </form>
+        </div>
+    </div>
+</div>
