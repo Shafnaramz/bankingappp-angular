@@ -11,10 +11,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let transaction of transactions ">
+                        <tr *ngFor="let transaction of transactions">
                             <td>{{transaction.amount}}</td>
                             <td>{{transaction.typeOfTransaction}}</td>
-                            <td (click)=deletetransaction>Delete</td>
+                            <td (click)="delete(transaction)">Delete</td>
                         </tr>
                     </tbody>
                 </table>

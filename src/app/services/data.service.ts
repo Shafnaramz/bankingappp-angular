@@ -31,6 +31,10 @@ getTransactions(){
   //return this.accountDetails[this.currentUser.acno].transactions;
   return this.http.get("http://localhost:3000/getTransactions",options);
 }
+deleteTransaction(id){
+  //return this.accountDetails[this.currentUser.acno].transactions;
+  return this.http.delete("http://localhost:3000/getTransactions/"+id, options);
+}
   getDetails(){
     if(localStorage.getItem("accountDetails")){
     this.accountDetails =JSON.parse(localStorage.getItem("accountDetails"))
