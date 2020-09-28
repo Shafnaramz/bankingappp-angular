@@ -1,0 +1,48 @@
+<!-- <p>register works!</p>
+<a routerLink="">Login</a> -->
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">Register an Account</div>
+    <div class="col"></div>
+  </div>
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          {{name}}
+          {{acno}}
+          {{pwd}}
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input formControlName="name" name="name" type="text" class="form-control" id="name">
+            <div *ngIf="getError('name')" class="error">Name is invalid</div>
+          </div>
+          <div class="form-group">
+            <label for="acno">AccountNumber</label>
+            <input formControlName="acno" name="acnotst" type="email" class="form-control" id="acno"
+              aria-describedby="Accountnumber">
+            <div *ngIf="getError('acno')" class="error">Name is invalid</div>
+          </div>
+          <div class="form-group">
+            <label for="acno">Pin</label>
+            <input formControlName="pin" name="pin" type="text" class="form-control" id="acno"
+              aria-describedby="Accountnumber">
+            <div *ngIf="getError('pin')" class="error">Name is invalid</div>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input formControlName="pwd" name="pwd" type="password" class="form-control" id="pwd">
+            <div *ngIf="getError('pwd')" class="error">Name is invalid</div>
+          </div>
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <a routerLink="">Back to login</a>
+        </form>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+</div>
