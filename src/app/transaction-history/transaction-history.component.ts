@@ -8,6 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class TransactionHistoryComponent implements OnInit {
 transactions=[];
+id = "";
   constructor(private dataService:DataService) {
     this. getTransactions();
   }
@@ -21,14 +22,30 @@ transactions=[];
   
   ngOnInit(): void {
   }
-
-delete(transaction){
-  this.dataService.deleteTransaction(transaction._id)
-  .subscribe((data:any)=>{
-    alert(data.message)
-    this.getTransactions();
+  //onDelete($event){
+    deleteTransaction($event){
+    //alert("Alert from parent: "+$event);
+    this.dataService.deleteTransaction($event)
+     .subscribe((data:any)=>{
+       alert(data.message);
+       this.id="";
+      this.getTransactions();
+      
+     })
+  }
+  onCancel($event){
+    this.id="";
+  }
+// delete(id){
+//   this.idToBeDeleted=id;
+  // this.dataService.deleteTransaction(id)
+  // .subscribe((data:any)=>{
+  //   alert(data.message)
+  //   this.getTransactions();
     
-  })
+  // })
+  showConfirmationDialog(id){
+    this.id=id;
 }
 
 }

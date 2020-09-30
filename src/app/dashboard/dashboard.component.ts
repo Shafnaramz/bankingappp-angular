@@ -60,7 +60,7 @@ export class DashboardComponent implements OnInit {
         alert(result.message);
         alert(result.balance);
           }, result => {
-            alert(result.message);
+            alert(result.error.message);
           })
         }
            getError(filed){
@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
         //alert(result.balance);
         
       },result => {
-        alert(result.message)
+        alert(result.error.message)
      })
     
       }
